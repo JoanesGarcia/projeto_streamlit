@@ -1,6 +1,6 @@
 
 class Login():
-    def __init__(self, usuario, senha) -> None:
+    def __init__(self) -> None:
         self.usuario = "usuario"
         self.senha = "senha"
 
