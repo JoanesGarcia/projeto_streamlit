@@ -23,7 +23,7 @@ def libera_acesso():
 def main():
     print(st.session_state["logado"])
     if not st.session_state["logado"]:
-        login = Login()
+        login = Login(st)
         login.logar(st)
     else:
         libera_acesso()

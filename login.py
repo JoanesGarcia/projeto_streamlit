@@ -1,11 +1,13 @@
+from mongo_db import MongoDB
 
 class Login():
-    def __init__(self) -> None:
+    def __init__(self, st) -> None:
         self.usuario = "usuario"
         self.senha = "senha"
+        self.client = MongoDB(st)
 
-    def verificar_credenciais(self):
-        return self.usuario == "usuario" and self.senha == "senha12333"
+    def verificar_credenciais(self):        
+        return self.client.get_login(self.usuario, self.senha)
     
     def logar(self, st):
         st.title("Login")
