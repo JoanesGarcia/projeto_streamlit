@@ -28,20 +28,3 @@ class MongoDB:
         self.client.close()
         
         return self.verificar_senha(senha, senha_banco)
-
-    def consulta_banco(self, paciente, data):
-        db = self.cliente['master']
-        collection = db['paciente']
-
-        objeto = collection.find_one({"paciente": paciente, "data": data})
-        print(objeto)
-        self.cliente.close()
-
-        return objeto
-    
-    def salva_banco(self, dados_paciente):
-        db = self.cliente['master']
-        collection = db['paciente']
-
-        collection.insert_one(dados_paciente)
-        self.cliente.close()
